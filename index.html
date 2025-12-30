@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Faceland × Bloomreach Engagement Sandbox Guide</title>
+    <meta
+      name="description"
+      content="Interactive, static guide for the Faceland × Bloomreach Engagement sandbox."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="app" id="app">
+      <header class="header" role="banner">
+        <div class="header__inner">
+          <div class="brand">
+            <div class="brand__mark" aria-hidden="true"></div>
+            <div class="brand__text">
+              <div class="brand__title">Faceland</div>
+              <div class="brand__subtitle">Bloomreach Engagement Sandbox Guide</div>
+            </div>
+          </div>
+          <div class="header__actions">
+            <button class="btn btn--ghost" id="lockBtn" type="button" hidden>
+              Lock
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Password gate -->
+      <main class="shell" id="gate" aria-labelledby="gateTitle">
+        <section class="card card--gate">
+          <h1 class="h1" id="gateTitle">Unlock the guide</h1>
+          <p class="muted">
+            Use the shared sandbox password from the enablement email.
+          </p>
+
+          <form class="gate__form" id="passwordForm" novalidate>
+            <label class="label" for="passwordInput">Password</label>
+            <div class="field-row">
+              <input
+                class="input"
+                id="passwordInput"
+                name="password"
+                type="password"
+                inputmode="text"
+                autocomplete="current-password"
+                required
+              />
+              <button class="btn" type="submit">Unlock guide</button>
+            </div>
+            <p class="error" id="passwordError" role="alert" hidden>
+              Incorrect password. Please try again.
+            </p>
+          </form>
+
+          <div class="gate__footnote">
+            <details class="details">
+              <summary>Having trouble?</summary>
+              <div class="details__content">
+                <p class="muted">
+                  This is a simple client-side gate (no backend). If you don’t
+                  have the password, ask the person who shared the sandbox
+                  enablement email.
+                </p>
+              </div>
+            </details>
+          </div>
+        </section>
+      </main>
+
+      <!-- Guide -->
+      <main class="shell shell--guide" id="guide" hidden>
+        <div class="layout">
+          <section class="content" aria-label="Guide content">
+            <div class="content__head">
+              <h2 class="h2" id="main">Guide</h2>
+              <p class="muted">
+                Accordion sections follow the provided
+                <code>FacelandBloomreachEngagementSandboxGuide.html</code>.
+              </p>
+              <p class="note" id="sourceNote" hidden></p>
+            </div>
+
+            <div class="accordion" id="accordion" aria-label="Guide sections"></div>
+          </section>
+
+          <aside class="tips" aria-label="Reminders and tips">
+            <div class="tips__inner">
+              <div class="tips__head">
+                <h3 class="h3">💡 Reminders</h3>
+                <p class="muted">Always-visible tips while you work.</p>
+              </div>
+              <ul class="tips__list" id="tipsList"></ul>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <span class="muted">
+            Static HTML/CSS/JS — suitable for GitHub Pages.
+          </span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>
